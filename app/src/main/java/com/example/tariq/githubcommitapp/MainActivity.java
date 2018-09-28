@@ -50,32 +50,16 @@ public class MainActivity extends AppCompatActivity {
             tv1.setBackgroundColor(getResources().getColor(R.color.white));
             tv1.setText(name);
             tv1.setPadding(1,1,1,1);
-//            RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(
-//                    RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-//
-//            params1.setMargins(0,0,0,1);
-//            tv1.setLayoutParams(params1);
 
             TextView tv2 = new TextView(this);
             tv2.setBackgroundColor(getResources().getColor(R.color.white));
             tv2.setText(date);
             tv2.setPadding(0,1,160,1);
-//            RelativeLayout.LayoutParams params2 = new TableLayout.LayoutParams(
-//                    TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
-//
-//            params2.setMargins(1,0,1,1);
-//            tv2.setLayoutParams(params2);
 
             TextView tv3 = new TextView(this);
             tv3.setBackgroundColor(getResources().getColor(R.color.white));
             tv3.setText(shorthandCommitID);
             tv3.setPadding(0,1,1,1);
-//            RelativeLayout.LayoutParams params3 = new TableLayout.LayoutParams(
-//                    TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
-//
-//            params3.setMargins(1,0,1,1);
-//            tv1.setLayoutParams(params3);
-
 
             tr.addView(tv1);
             tr.addView(tv2);
@@ -130,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = findViewById(R.id.button);
-        final TextView textView = findViewById(R.id.textView);
         final TableLayout tableLayout = findViewById(R.id.commitTable);
 
 
@@ -139,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 OkHttpClient client = new OkHttpClient();
                         okhttp3.Request request = new okhttp3.Request.Builder()
-                                .url("https://api.github.com/repos/poynt/PoyntSamples/commits?per_page=1")
+                                .url("https://api.github.com/repos/poynt/PoyntSamples/commits?per_page=10")
                                 .build();
 
                 client.newCall(request).enqueue(new Callback() {
